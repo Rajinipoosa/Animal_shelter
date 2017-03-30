@@ -23,7 +23,19 @@ class Owner
     SqlRunner.run(sql)
   end
 
-   
+  def self.all
+   sql = "SELECT * FROM owners"
+   owners =  SqlRunner.run(sql)
+   @all_owners = owners.map{|owner| Owner.new(owner)}
+     return @all_owners
+  end
+  def self.delete_all
+    sql = "DELETE * FROM owners"
+    all_people = SqlRunner.run(sql)
+  end
+  def 
+
+  end
+  end
 
 
-end

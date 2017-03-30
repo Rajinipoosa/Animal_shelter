@@ -1,4 +1,6 @@
 require_relative('../models/animals.rb')
+require_relative('../models/owner.rb')
+
 require('pry')
 
  Animal.delete_all
@@ -22,6 +24,14 @@ animal2 = Animal.new({
      "description" => "The Bichon Frise (pronounced BEE-shawn FREE-say; the plural is Bichons Frises) is a cheerful, small dog breed with a love of mischief and a lot of love to give. With his black eyes and fluffy white coat, the Bichon looks almost like a child’s toy. And it doesn’t take long to realize that the Bichon can be your happiest and most enthusiastic companion",
          "image" => '../public/images/puppy.jpg' })
 animal2.save()
+ owner1 = Owner.new({
+  "first_name" => "Rajini",
+  "last_name" => "Poosa",
+   "email" => "rajinipoosa@gmail.com",
+   
+   "animal_id" => animal1.id
+   })
+owner1.save()
 
 
 binding.pry

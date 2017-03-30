@@ -19,7 +19,7 @@ CREATE TABLE owners(
  first_name VARCHAR(255),
  last_name VARCHAR(255),
  email VARCHAR(255),
- phone_num INT4,
+ 
  animal_id INT8 REFERENCES animals(id) ON DELETE CASCADE
 
 );

@@ -28,9 +28,7 @@ animal2.save()
   "first_name" => "Rajini",
   "last_name" => "Poosa",
    "email" => "rajinipoosa@gmail.com",
-   
-   "animal_id" => animal1.id
-   })
+   "animal_id" => animal1.id })
 owner1.save()
 
 

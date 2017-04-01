@@ -1,0 +1,26 @@
+<h1>All Animals</h1>
+
+  <% for animal in @animals %>
+
+    <p>Name : <%= animal.name %></p>
+   
+   <p> Admission_date: <%= animal.admission_date %></p>
+    
+    <p>Image: <img style="height: 150px; width: 200px" src = <%= animal.image%> /></p>
+    <p><% animal.status %></p>
+   <% if animal.status == "t" %>
+   <a href ="">Adoptable</a>
+    <% else animal.status == "f" %>
+      NOT Adoptable,Booked
+  <% end %> 
+  
+  <% end %>
+  
+  
+    
+    
+    
+    
+    
+  
+  

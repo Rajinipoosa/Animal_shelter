@@ -4,7 +4,7 @@ class Animal
   attr_reader :id
   attr_accessor :name, :breed,:type,:admission_date,:status,:description,:image
   def initialize(options)
-    @id = nil || options['id'].to_i
+    @id =  options['id'].to_i
     @name = options['name']
     @breed = options['breed']
     @type = options['type']
@@ -25,12 +25,15 @@ class Animal
     SqlRunner.run(sql)
   end
 
+  
+
   def self.all
     sql = "SELECT * FROM animals"
     animals = SqlRunner.run(sql)
-    @all_animals = animals.map{|animal| Animal.new(animal)}
+    @all_animals = animals.map{ |animal| Animal.new(animal) }
     return @all_animals
   end
+
   def self.find(id)
     sql = "SELECT * FROM animals WHERE id = #{id}"
 
@@ -43,6 +46,7 @@ class Animal
       SqlRunner.run(sql)
 
   end
+
   
 
 end

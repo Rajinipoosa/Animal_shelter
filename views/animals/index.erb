@@ -1,20 +1,42 @@
 <h1>All Animals</h1>
 
-  <% for animal in @animals %>
-
-    <p>Name : <%= animal.name %></p>
+  
+<table>
+<tr>
+<th><p>Name </p></th>
    
-   <p> Admission_date: <%= animal.admission_date %></p>
+   <th> Admission_date</th>
+   <th>image</th>
+   
+   <th>Status</th>
+   <th></th>
+   
+
+  </tr>
+ 
+  <% for animal in @animals %>
+  <tr>
+  <td><p><%= animal.name %><p></td>
+  
+  <td> <p> <%= animal.admission_date %></p></td>
+   <!-- <td align="centre"> <p><%= animal.description %></p></td> -->
+   
+    <td><p> <img style="height: 150px; width: 200px" src = <%= animal.image%> /></p></td>
     
-    <p>Image: <img style="height: 150px; width: 200px" src = <%= animal.image%> /></p>
-    <p><% animal.status %></p>
+  <p><% animal.status %></p>
    <% if animal.status == "t" %>
-   <a href ="">Adoptable</a>
-    <% else animal.status == "f" %>
-      NOT Adoptable,Booked
+  <td> <a href ="/owners/new">Adoptable</a></td>
+   <% else animal.status == "f" %>
+    <td>  NOT Adoptable,Booked</td>
+     <td></td>
+      
+     
   <% end %> 
   
   <% end %>
+  </tr>
+  </table>
+  
   
   
     

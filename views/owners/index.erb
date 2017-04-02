@@ -2,8 +2,9 @@
 
   <% for owner in @owners %>
 
-    <p>Name : <%= owner.first_name %></p>
-   <p>Animal name:<%=owner.animals.name%></p>
+    <p>Name:   <%= owner.first_name %>  </p>
+   <p>Animal name:  <%=owner.animals.name%>   </p>
+   <p>Animal Admission date:  <%= owner.animals.admission_date  %></p>
      
  
   <% end %>

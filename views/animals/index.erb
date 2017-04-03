@@ -10,8 +10,9 @@
    
    <th>Status</th>
    <th></th>
-   
-
+   <th>Edit</th>
+<th></th>
+<th>Delete</th>
   </tr>
  
   <% for animal in @animals %>
@@ -25,13 +26,22 @@
     
   <p><% animal.status %></p>
    <% if animal.status == "t" %>
-  <td> <a href ="/owners/new">Adoptable</a></td>
+  <td> <!-- <a href ="/owners/edit"> -->Adoptable<!-- </a> --></td>
    <% else animal.status == "f" %>
     <td>  NOT Adoptable,Booked</td>
-     <td></td>
-      
      
-  <% end %> 
+      <% end %> 
+     <!-- <td><a href = "">Edit</a></td><td></td> -->
+     <td></td>
+     <form method ="post" action ="/animals/<%=animal.id%>/delete">
+       <td> <input type="submit"   value ="Delete" ></td>
+      </form>
+      
+      <td></td>
+     <form method ="get" action ="/animals/<%=animal.id%>/edit">
+       <td> <input type="submit"  value ="Edit" ></td>
+      </form>
+ 
   
   <% end %>
   </tr>

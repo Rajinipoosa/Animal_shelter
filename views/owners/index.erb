@@ -3,11 +3,16 @@
   <% for owner in @owners %>
 
     <p>Name:   <%= owner.first_name %>  </p>
-   <p>Animal name:  <%=owner.animals.name%>   </p>
-   <p>Animal Admission date:  <%= owner.animals.admission_date  %></p>
-     
- 
-  <% end %>
+    <% for animal in owner.animals %>
+   <p>Animal name:  <%=animal.name %>   </p>
+   <p>Animal Admission date:  <%= animal.admission_date  %></p>
+    
+     <% end %>
+ <form method = "get" type='submit' action = "/owners/<%= owner.id%>/adopt">
+ <input type ="submit" value ="adoption">
+ <% end %>
+ </form>
+  
   
   
     

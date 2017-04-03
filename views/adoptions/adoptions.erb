@@ -1,0 +1,11 @@
+<h2> Adopted Animals</h2>
+<% for animal in @animals %>
+<% if animal.status == "f" %>
+<p> Name:<%= animal.name%></p>
+<p> Admission date:<%= animal.admission_date %></p>
+<p> <img src="<%= animal.image %>" style="height: 150px; width: 200px" /></p>
+<p> Description:<%= animal.description %></p>
+
+
+<%end %>
+<% end%>

@@ -23,7 +23,7 @@ animal2 = Animal.new({
     "type"=> "dog",
     "breed"=> "Bichon Frise",
     "admission_date" => "March 16 2017",
-     "status"=> false,
+     "status"=> true,
      "description" => "The Bichon Frise pronounced BEE-shawn FREE-say the plural is Bichons Frises is a cheerful, small dog breed with a love of mischief and a lot of love to give. With his black eyes and fluffy white coat, the Bichon looks almost like a child’s toy. And it doesn’t take long to realize that the Bichon can be your happiest and most enthusiastic companion",
          "image" => 'images/puppy.jpg' })
 animal2.save()

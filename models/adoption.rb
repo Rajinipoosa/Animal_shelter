@@ -33,17 +33,21 @@ def self.find(owner_id)
 
 end
 
-def animals()
-  sql = "SELECT animals.* FROM animals 
-        INNER JOIN adoptions 
-        ON adoptions.animal_id = animals.id
-        WHERE adoptions.animal_id = #{@animal_id}"
-      results = SqlRunner.run( sql )
+# def animals()
+#   sql = "SELECT animals.* FROM animals 
+#         INNER JOIN adoptions 
+#         ON adoptions.animal_id = animals.id
+#         WHERE adoptions.animal_id = #{@animal_id}"
+#       results = SqlRunner.run( sql )
 
-     return results
+#      return results
 
+
+# end
+def update()
+sql = "UDATE FROM adoptions SET(animal_id,owner_id) = (#{@animal_id},#{@owner_id})"
+     SqlRunner.run( sql )
 
 end
-
 
 end

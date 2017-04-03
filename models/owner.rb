@@ -34,8 +34,8 @@ class Owner
    sql = "SELECT animals.* FROM animals INNER JOIN adoptions ON animals.id = adoptions.animal_id WHERE adoptions.owner_id =  #{@id}"
   
      animals = SqlRunner.run(sql)
-     @result = Animal.new(animals.first)
-    return @result
+     @animals = animals.map{ |animal| Animal.new(animal) }
+    return @animals
   end
      
 

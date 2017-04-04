@@ -24,6 +24,7 @@ class Animal
     sql = "UPDATE  animals SET( name,breed,type,admission_date,status,description,image) = ('#{@name}','#{@breed}','#{@type}','#{@admission_date}','#{@status}','#{@description}','#{@image}') WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
+
   def delete()
    sql = "DELETE FROM animals where id = #{@id}"
     SqlRunner.run(sql)
@@ -48,6 +49,12 @@ class Animal
     sql = "DELETE FROM animals"
       SqlRunner.run(sql)
 
+  end
+
+  def self.find(name)
+   sql = "SELECT * FROM animals WHERE name = #'%{name}%'"
+     @result = SqlRunner.run(sql)
+     return @result
   end
 
   

@@ -19,11 +19,31 @@ get '/owners/:id/adopt' do
 
   post '/owners/:id' do
     @owner = Owner.find(params[:id])
+
     @owner.update
    @owner.adopt(params[:animal_id])
+   
   @animal= Animal.find(params[:animal_id])
   @animal.status = "f"
   @animal.update
 
    redirect '/animals'
   end
+
+  post '/owners/:id/delete' do
+    @owner = Owner.find(params[:id])
+    @owner.delete()
+    redirect '/owners'
+  end
+
+  get '/owners/new' do 
+
+  erb(:"owners/new")
+  end
+
+  post '/owners' do 
+    # binding.pry
+   @owners = Owner.new(params)
+   @owners.save()
+   redirect '/owners'
+    end

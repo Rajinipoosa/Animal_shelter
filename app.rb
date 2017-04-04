@@ -7,5 +7,7 @@ require_relative('controllers/adoption_controller')
 
 
 get '/' do
+  @animals = Animal.all()
   erb( :index )
 end
+

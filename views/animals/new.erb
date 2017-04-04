@@ -1,7 +1,6 @@
-    <h1>New Animal</h1>
-<form method ="post" action="/animals">
+<h1>New Animal</h1>
 <table>
-<tr>
+<form method ="post" action="/animals"><tr>
 <th>
  <label for="Animal_name">Animal name:</label></th><td></td><td><input id="name" type="text" name="name" /></td></tr>
  <tr>
@@ -46,8 +45,8 @@
    <tr>
     <th><label for="status">Status:</label>
    </th><td></td>
- <td><input type ="radio"  name = "status" value = "false"/>Adoptable</td>
- <td><input type ="radio"  name = "status" value = "true" />Not Adoptable</td>
+ <td><input type ="radio"  name = "status" value = "true" checked="checked" />Adoptable</td>
+ <td><input type ="radio"  name = "status" value = "false" />Not Adoptable</td>
 
     
   <br/>
@@ -56,6 +55,6 @@
  <td></td>
  <td>
  <input type="submit" value="Add Animal" /></td></tr>
+</form>
 
 </table>
-</form>

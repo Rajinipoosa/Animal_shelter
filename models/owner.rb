@@ -38,7 +38,10 @@ class Owner
     return @animals
   end
      
-
+  def delete()
+   sql = "DELETE FROM owners where id = #{@id}"
+    SqlRunner.run(sql)
+  end
 
   def self.all
    sql = "SELECT * FROM owners"

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Animal Shelter</title> 
-  <link rel="stylesheet" type="text/css" href="/images/style.css">
+  <link rel="stylesheet" type="text/css" href="/images/styles.css" />
 </head>
 <body class ="animal">
   <nav>
@@ -17,13 +17,13 @@
        <a href="/animals/new">New Animals</a>
      </li>
      <li>
-       <a href="/adoptions">Adopted Animals</a>
+       <a href="/adoptions">Adoptable Animals</a>
+     </li>
+     <li>
+       <a href="/owners/new">New Owner</a>
      </li>
     </ul>
   </nav>
-  
-  <%= yield %>
-  
-  
-</body>
+  <%=yield %>
+  </body>
 </html>

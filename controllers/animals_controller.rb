@@ -26,4 +26,16 @@ post '/animals' do
  redirect '/animals'
   end
 
+  get '/animals/:id/edit' do
+    @animals = Animal.all()
+    @animal = Animal.find(params[:id])
+
+     erb(:"/animals/edit")
+  end
+
+  post '/animals/:id' do
+    @animal = Animal.new(params)
+    @animal.update
+    redirect "/animals"
+  end
 

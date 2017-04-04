@@ -11,4 +11,10 @@ get '/adoptions' do
   @animals = Animal.all()
   erb ( :"adoptions/adoptions" )
 end
-binding.pry
+
+get '/notadoptions' do
+ 
+  @animals = Animal.all()
+  erb ( :"adoptions/notadopted" )
+end
+

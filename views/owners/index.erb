@@ -1,17 +1,22 @@
 <h1>All Owners</h1>
-
+  
   <% for owner in @owners %>
-
+  
     <p>Name:   <%= owner.first_name %>  </p>
     <% for animal in owner.animals %>
    <p>Animal name:  <%=animal.name %>   </p>
    <p>Animal Admission date:  <%= animal.admission_date  %></p>
     
      <% end %>
- <form method = "get" type='submit' action = "/owners/<%= owner.id%>/adopt">
- <input type ="submit" value ="adoption">
+<tr><td> <form method = "get" type='submit' action = "/owners/<%= owner.id%>/adopt">
+ <input type ="submit" value ="adoption"></form></td>
+ <td>
+ <form method = "post" type='submit' action = "/owners/<%= owner.id%>/delete">
+ <input type ="submit" value ="Delete">
+
+
+ </form></td></tr>
  <% end %>
- </form>
   
   
   

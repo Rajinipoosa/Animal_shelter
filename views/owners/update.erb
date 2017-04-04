@@ -1,15 +1,12 @@
-
-
-
 <h1>Update Owner!Animal Adoption</h1>
 
 <form action="/owners/<%= @owner.id%>" method="post">
   <label for="first_name">First Name:</label>
   <input id="first_name" type="text" name="first_name"  value ="<%=@owner.first_name%>"/>
-  <br></br>
+  <br/>
   <label for="last_name">Last Name:</label>
   <input id="last_name" type="text" name="last_name"  value = "<%=@owner.last_name%>"/>
-  <br></br>
+  <br/>
   <label for="email">Email:</label>
   <input id="email" type="text" name="email"  value ="<%= @owner.email%>"/>
   <select name ="animal_id">

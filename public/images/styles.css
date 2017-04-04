@@ -19,11 +19,12 @@ font-family: Verdana, serif;
 h1{
   color: Black;
   text-align: center;
-  margin-top: 5px;
+  
 }
 ul.unorder li{
 list-style-type: none;
 display: inline;
+
 }
 div.animals {
   
@@ -35,17 +36,19 @@ div.animals {
      padding: 0;
      overflow: hidden;
      background-color: #333;
+     
  }
 
  li {
      float: left;
+     border-right:1px solid #bbb;
  }
 
  li a {
      display: block;
      color: white;
      text-align: center;
-     padding: 14px 16px;
+     padding: 16px 25px;
      text-decoration: none;
  }
 
@@ -53,5 +56,20 @@ div.animals {
  li a:hover {
      background-color: #111;
  }
+div.animals{
+display: block;
 
+float: left}
+.image{
 
+  height: 150px; width: 200px
+ 
+  
+}
+th.header{
+  text-align: left;
+
+}
+p.text{
+  text-align: left;
+}

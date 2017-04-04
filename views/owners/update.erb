@@ -9,17 +9,23 @@
   <br/>
   <label for="email">Email:</label>
   <input id="email" type="text" name="email"  value ="<%= @owner.email%>"/>
-  <select name ="animal_id">
-  <% for animal in @animals %>
-  <% if animal.status == 't'%>
   
-        <option value="<%= animal.id %>"><%= animal.name %></option>
-        <% end %>
-        <% end %>
+  <% if @adoptable_animals !=[] %>
+  <% for adoptable_animal in  @adoptable_animals %>
     
+ 
+    <select name ="animal_id">
+        <option value="<%= adoptable_animal.id %>"><%= adoptable_animal.name %></option>
+        </select>
 
-  </select>
-  
+    <input  type='submit' value="Adopt">
 
-  <input  type='submit' value="Adopt">
-</form>
+      
+      
+     
+  <% end %>
+  </form>
+ 
+  <% else %>
+  <p> No animals to Adopt</p>
+  <% end %>

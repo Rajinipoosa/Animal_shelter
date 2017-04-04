@@ -13,7 +13,8 @@ end
 
 get '/owners/:id/adopt' do
   @owner = Owner.find(params[:id])
-  @animals = Animal.all()
+  @owners_animals = @owner.animals()
+  @adoptable_animals = Animal.adoptables()
   erb (:"/owners/update")
   end
 

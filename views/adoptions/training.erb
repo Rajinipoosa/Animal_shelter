@@ -1,6 +1,6 @@
-<h2> Not Adoptable animals</h2>
+<h1> In Training Animals</h1>
 <% for animal in @animals %>
-<% if animal.status == "t" %>
+<% if animal.training == "t" %>
 <p> Name:<%= animal.name%></p>
 <p> Admission date:<%= animal.admission_date %></p>
 <p> <img src="<%= animal.image %>" style="height: 150px; width: 200px" /></p>

@@ -6,7 +6,7 @@
 <table >
 <tr>
   
-   <td> <img class="image" type="text" src = <%= animal.image%> /></td></tr>
+   <td> <img class="image"  src = <%= animal.image%> /></td></tr>
    <tr>
 <tr>
 <th class = "header">Name</th>
@@ -17,26 +17,37 @@
 
    <th class = "header">Status</th>
   <p  class ="text"><% animal.status %></p>
-     <% if animal.status == "t" %>
-    <td> <!-- <a href ="/owners/edit"> -->Adoptable<!-- </a> --></td>
-     <% else animal.status == "f" %>
-      <td>  NOT Adoptable,Booked</td></tr>
+     <% if (animal.status == "t") && (animal.training == "f" )%>
+    <td> Adoptable</td>
+     <% elsif 
+        animal.status == "f"  %>
+      <td>  NOT Adoptable,Booked</td>
+        <% elsif animal.training == "t" %>
+        <td>Animal is training/vet care</td>
+      </tr>
        <% end %> 
-   <tr>
+   <tr style="display:inline; ">
    <td>
+   
+   
+
    <form method ="get" action ="/animals/<%=animal.id%>/edit">
      <input type="submit"  value ="Edit" >
     </form>
     </td>
-    
-       <td>
+    <td>
+    <form method ="get" action ="/animals/<%=animal.id%>">
+      <input type="submit"  value ="show" >
+     </form>
+     </td>
+     <td>
        <form method ="post" action ="/animals/<%=animal.id%>/delete">
-         <input type="submit"   value ="Delete" >
-         
+         <input type="submit"   value ="Delete"  >
+         </td>
         </form>
-</td>
- 
-
+        
+ </div>
+ </td>
   </tr>
  </tr>
   </table>

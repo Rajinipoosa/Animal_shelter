@@ -27,7 +27,7 @@ class Owner
   def adopt(id)
      sql = "INSERT INTO adoptions(animal_id,owner_id) VALUES(#{id},#{@id}) RETURNING *"
       adoptions = SqlRunner.run(sql).first()
-  # @adoption_id = adoptions.first()['id'].to_i
+  
   end
 
   def animals()

@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Animal
   attr_reader :id
-  attr_accessor :name, :breed,:type,:admission_date,:status,:description,:image
+  attr_accessor :name, :breed,:type,:admission_date,:status,:description,:image,:training
   def initialize(options)
     @id =  options['id'].to_i
     @name = options['name']
@@ -12,16 +12,17 @@ class Animal
     @status = options['status']
     @description = options['description']
     @image = options['image']
+    @training = options['training']
   end
 
   def save()
-    sql = "INSERT INTO animals (name,breed,type,admission_date,status,description,image) VALUES('#{@name}','#{@breed}','#{@type}','#{@admission_date}','#{@status}','#{@description}','#{@image}') RETURNING *"
+    sql = "INSERT INTO animals (name,breed,type,admission_date,status,description,image,training) VALUES('#{@name}','#{@breed}','#{@type}','#{@admission_date}','#{@status}','#{@description}','#{@image}','#{@training}') RETURNING *"
     animals = SqlRunner.run(sql)
     @id = animals.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE  animals SET( name,breed,type,admission_date,status,description,image) = ('#{@name}','#{@breed}','#{@type}','#{@admission_date}','#{@status}','#{@description}','#{@image}') WHERE id = #{@id}"
+    sql = "UPDATE  animals SET( name,breed,type,admission_date,status,description,image,training) = ('#{@name}','#{@breed}','#{@type}','#{@admission_date}','#{@status}','#{@description}','#{@image}','#{@training}') WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 
@@ -37,6 +38,13 @@ class Animal
     @all_animals = animals.map{ |animal| Animal.new(animal) }
     return @all_animals
   end
+  def self.adoptables()
+    sql = "SELECT * FROM animals WHERE status = 't'"
+    animals = SqlRunner.run(sql)
+    @adoptable_animals = animals.map{ |animal| Animal.new(animal) }
+    return @adoptable_animals
+
+  end
 
   def self.find(id)
     sql = "SELECT * FROM animals WHERE id = #{id}"
@@ -51,12 +59,7 @@ class Animal
 
   end
 
-  def self.find(name)
-   sql = "SELECT * FROM animals WHERE name = #'%{name}%'"
-     @result = SqlRunner.run(sql)
-     return @result
-  end
-
+  
   
 
 end

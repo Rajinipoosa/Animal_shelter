@@ -1,18 +1,23 @@
+DROP TABLE type CASCADE;
 DROP TABLE animals CASCADE;
 DROP TABLE owners CASCADE;
 DROP TABLE  adoptions CASCADE;
 
-
+CREATE TABLE type(
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255)
+);
 
 CREATE TABLE animals(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  type VARCHAR(255) NOT NULL,
+  type int8 REFERENCES type(id) ON DELETE CASCADE, 
   breed VARCHAR(255) NOT NULL,
   admission_date DATE,
   status BOOLEAN,
   description TEXT,
-  image VARCHAR(255)
+  image VARCHAR(255),
+  training BOOLEAN
   
 );
 

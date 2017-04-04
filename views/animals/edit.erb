@@ -5,10 +5,11 @@
  <label for="Animal_name">Animal name:</label></th><td></td><td><input id="name" type="text" name="name" value ="<%=@animal.name %>" /></td></tr>
  <tr>
  <th><label for="type">Select a Type</label></th><td></td><td>
-  <select id="type" name="animal_id">
   
-<option value="<%= @animal.id%>"><%= @animal.type%></option>
-  
+  <select id="type" name="type_id">
+  <% for type in @types %>
+<option value="<%= type.id %>"><%=type.name%></option>
+  <% end %>
   
   </select></td>
   <br/></tr>
@@ -52,6 +53,15 @@
     
   <br/>
   </tr>
+  <tr>
+      <th><label for="training">Need training:</label>
+     </th><td></td>
+   <td><input type ="radio"  name = "training" value = "t" <%= "checked" if @animal.training == 't' %> />In training</td>
+   <td><input type ="radio"  name = "training" value = "f" <%= "checked" if @animal.training == 'f' %> />Not Training</td>
+   <!-- <input checked />   -->
+      
+    <br/>
+    </tr>
  <tr>
  <td></td>
  <td>

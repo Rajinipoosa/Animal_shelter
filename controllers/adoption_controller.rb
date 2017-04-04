@@ -12,9 +12,9 @@ get '/adoptions' do
   erb ( :"adoptions/adoptions" )
 end
 
-get '/notadoptions' do
+get '/training' do
  
   @animals = Animal.all()
-  erb ( :"adoptions/notadopted" )
+  erb ( :"adoptions/training" )
 end
 

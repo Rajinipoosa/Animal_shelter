@@ -4,9 +4,9 @@ background-repeat: no-repeat;
 font-family: Verdana, serif;
 }
 .buttons{
-     background-color: white;
+     background-color:black;
      border: none;
-     color: white;
+     color: black;
      padding: 15px 32px;
      text-align: center;
      text-decoration: none;
@@ -60,6 +60,7 @@ div.animals{
 display: block;
 
 float: left}
+
 .image{
 
   height: 150px; width: 200px
@@ -72,4 +73,30 @@ th.header{
 }
 p.text{
   text-align: left;
+}
+div.rotation{
+
+        width: 100px;
+      height: 100px;
+      
+      position: relative;
+      -webkit-animation: mymove 7s infinite; /* Safari 4.0 - 8.0 */
+      -webkit-animation-timing-function: linear; /* Safari 4.0 - 8.0 */
+      animation: mymove 5s infinite;
+      animation-timing-function: linear;
+  }
+
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes mymove {
+      from {left: 0px;}
+      to {left: 200px;}
+  }
+
+  @keyframes mymove {
+      from {left: 0px;}
+      to {left: 200px;}
+  }
+div.form{
+  display:inline;
+ 
 }

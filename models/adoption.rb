@@ -8,13 +8,19 @@ class Adoption
    @owner_id = options['owner_id'].to_i
   
   end
-  # def save()
-  #  sql = "INSERT INTO adoptions(animal_id,owner_id) VALUES(#{@animal_id},#{@owner_id}) RETURNING *"
-  #   adoptions = SqlRunner.run(sql)
-  #   @id = adoptions.first()['id'].to_i
+  def save()
+   sql = "INSERT INTO adoptions(animal_id,owner_id) VALUES(#{@animal_id},#{@owner_id}) RETURNING *"
+    adoptions = SqlRunner.run(sql)
+    @id = adoptions.first()['id'].to_i
     
-  # end
-  def self.all()
+  end
+ def update()
+ sql = "UDATE FROM adoptions SET(animal_id,owner_id) = (#{@animal_id},#{@owner_id})"
+      SqlRunner.run( sql )
+
+ end
+
+ def self.all()
 
     sql = "SELECT * FROM adoptions"
     adoptions = SqlRunner.run(sql)
@@ -33,21 +39,6 @@ def self.find(owner_id)
 
 end
 
-# def animals()
-#   sql = "SELECT animals.* FROM animals 
-#         INNER JOIN adoptions 
-#         ON adoptions.animal_id = animals.id
-#         WHERE adoptions.animal_id = #{@animal_id}"
-#       results = SqlRunner.run( sql )
 
-#      return results
-
-
-# end
-def update()
-sql = "UDATE FROM adoptions SET(animal_id,owner_id) = (#{@animal_id},#{@owner_id})"
-     SqlRunner.run( sql )
-
-end
 
 end

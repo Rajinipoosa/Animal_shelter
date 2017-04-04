@@ -18,3 +18,15 @@ get '/training' do
   erb ( :"adoptions/training" )
 end
 
+get '/assign' do
+  @owners = Owner.all()
+  @animals = Animal.all()
+  @types = Type.all()
+
+  erb ( :"adoptions/assign" )
+end
+post '/assign' do
+ @adoption = Adoption.new(params)
+ @adoption.save()
+  redirect "/owners" 
+end

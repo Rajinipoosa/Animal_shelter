@@ -1,44 +1,39 @@
 <h1>Show more</h1>
-
-  
-
 <table >
-<tr>
-  <p></p>
-   <td> <img class="image"   src=<%= @animal.image%>/></td></tr>
-  
-<tr>
-<th class = "header">Name</th>
-   <td><p class ="text"><%= @animal.name %></p></td></tr>
-  <tr> <th class = "header"> Admission_date :</th>
+  <tr>
+    <p></p>
+    <td> <img class="image1"   src=<%= @animal.image%>/></td></tr>
+    
+    <tr>
+      <th class = "header">Name</th>
+      <td><p class ="text"><%= @animal.name %></p></td></tr>
+      <tr> <th class = "header"> Admission_date :</th>
 
-  <td> <p  class ="text"> <%= @animal.admission_date %></p></td></tr>
-  <tr><th class = "header"> Description :</th>
-<td> <p  class ="text"> <%= @animal.description %></p></td></tr>
+        <td> <p  class ="text"> <%= @animal.admission_date %></p></td></tr>
+        <tr><th class = "header"> Description :</th>
+          <td> <p  class ="text"> <%= @animal.description %></p></td></tr>
 
-   <th class = "header">Status</th>
-  <p  class ="text"><% @animal.status %></p>
-     <% if (@animal.status == "t") && (@animal.training == "f" )%>
-    <td> <!-- <a href ="/owners/edit"> -->Adoptable<!-- </a> --></td>
-     <% elsif 
-        @animal.status == "f"  %>
-      <td>  NOT Adoptable,Booked</td>
-        <% elsif @animal.training == "t" %>
-        <td>Animal is training/vet care</td>
+          <th class = "header">Status</th>
+          <p  class ="text"><% @animal.status %></p>
+          <% if (@animal.status == "t") && (@animal.training == "f" )%>
+          <td> Adoptable</td>
+          <% elsif 
+          (@animal.status == "f") && (@animal.training == "f" )  %>
+          <td>  NOT Adoptable,Booked</td>
+          <% elsif @animal.training == "t" %>
+          <td>Animal is training/vet care</td>
+        </tr>
+        <% end %> 
       </tr>
-       <% end %> 
-  
-
-  </tr>
- </tr>
+    </tr>
   </table>
   
   
   
-    
-    
-    
-    
-    
+  
+  
+  
+  
+  
   
   

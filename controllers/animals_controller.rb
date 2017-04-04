@@ -17,33 +17,33 @@ post '/animals/:id/delete' do
 end
 
 get '/animals/new' do 
-     @types = Type.all()
+ @types = Type.all()
 
-erb(:"animals/new")
+ erb(:"animals/new")
 end
 
 post '/animals' do 
   # binding.pry
- @animals = Animal.new(params)
- @animals.save()
- redirect '/animals'
-  end
+  @animals = Animal.new(params)
+  @animals.save()
+  redirect '/animals'
+end
 
-  get '/animals/:id/edit' do
-    @animals = Animal.all()
-    @animal = Animal.find(params[:id])
-     @types = Type.all()
-     erb(:"/animals/edit")
-  end
+get '/animals/:id/edit' do
+  @animals = Animal.all()
+  @animal = Animal.find(params[:id])
+  @types = Type.all()
+  erb(:"/animals/edit")
+end
 
-  post '/animals/:id' do
-    @animal = Animal.find(params[:id])
-    @animal.update
-    redirect "/animals"
-  end
+post '/animals/:id' do
+  @animal = Animal.new(params)
+  @animal.update
+  redirect "/animals"
+end
 
-  get '/animals/:id' do
-    @animal = Animal.find(params[:id])
-    erb(:"animals/show")
-  end
+get '/animals/:id' do
+  @animal = Animal.find(params[:id])
+  erb(:"animals/show")
+end
 

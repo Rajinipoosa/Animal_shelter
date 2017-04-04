@@ -46,7 +46,12 @@ animal2.save()
   "last_name" => "Poosa",
    "email" => "rajinipoosa@gmail.com"})
 owner1.save()
-
+ owner2 = Owner.new({
+  "first_name" => "satish",
+  "last_name" => "kura",
+   "email" => "satish.kura@gmail.com"})
+owner1.save()
+owner2.save()
 owner1.adopt(animal1.id) 
 @animal = Animal.find(animal1.id)
 

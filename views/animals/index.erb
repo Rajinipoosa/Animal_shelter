@@ -1,63 +1,63 @@
 <h1>All Animals</h1>
 
 <% for animal in @animals %>
-  
+
 <div class ="animals">
-<table >
-<tr>
-  
-   <td> <img class="image"  src = <%= animal.image%> /></td></tr>
-   <tr>
-<tr>
-<th class = "header">Name</th>
-   <td><p class ="text"><%= animal.name %></p></td>
-  <tr> <th class = "header"> Admission_date :</th>
+  <table >
+    <tr>
+      
+     <td> <img class="image1"  src = <%= animal.image%> /></td></tr>
+     <tr>
+      <tr>
+        <th class = "header">Name</th>
+        <td><p class ="text"><%= animal.name %></p></td>
+        <tr> <th class = "header"> Admission_date :</th>
 
-  <td> <p  class ="text"> <%= animal.admission_date %></p></td></tr>
+          <td> <p  class ="text"> <%= animal.admission_date %></p></td></tr>
 
-   <th class = "header">Status</th>
-  <p  class ="text"><% animal.status %></p>
-     <% if (animal.status == "t") && (animal.training == "f" )%>
-    <td> Adoptable</td>
-     <% elsif 
-        animal.status == "f"  %>
-      <td>  NOT Adoptable,Booked</td>
-        <% elsif animal.training == "t" %>
-        <td>Animal is training/vet care</td>
-      </tr>
-       <% end %> 
-   <tr style="display:inline; ">
-   <td>
-   
-   
+          <th class = "header">Status</th>
+          <p  class ="text"><% animal.status %></p>
+          <% if (animal.status == "t") && (animal.training == "f" )%>
+          <td> Adoptable</td>
+          <% elsif 
+          (animal.status == "f")  && (animal.training == "f" )  %>
+          <td>  NOT Adoptable,Booked</td>
+          <% elsif animal.training == "t" %>
+          <td>Animal is training/vet care</td>
+        </tr>
+        <% end %> 
+        <tr style="display:inline; ">
+         <td>
+           
+           
 
-   <form method ="get" action ="/animals/<%=animal.id%>/edit">
-     <input type="submit"  value ="Edit" >
-    </form>
-    </td>
-    <td>
-    <form method ="get" action ="/animals/<%=animal.id%>">
-      <input type="submit"  value ="show" >
-     </form>
-     </td>
-     <td>
-       <form method ="post" action ="/animals/<%=animal.id%>/delete">
-         <input type="submit"   value ="Delete"  >
+           <form method ="get" action ="/animals/<%=animal.id%>/edit">
+             <input type="submit"  value ="Edit" >
+           </form>
          </td>
-        </form>
-        
- </div>
- </td>
-  </tr>
+         <td>
+          <form method ="get" action ="/animals/<%=animal.id%>">
+            <input type="submit"  value ="show" >
+          </form>
+        </td>
+        <td>
+         <form method ="post" action ="/animals/<%=animal.id%>/delete">
+           <input type="submit"   value ="Delete"  >
+         </td>
+       </form>
+       
+     </div>
+   </td>
  </tr>
-  </table>
-  </div>
-  <% end %>
-  
-    
-    
-    
-    
-    
-  
-  
+</tr>
+</table>
+</div>
+<% end %>
+
+
+
+
+
+
+
+

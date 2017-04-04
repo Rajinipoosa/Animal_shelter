@@ -12,20 +12,20 @@
   
   <% if @adoptable_animals !=[] %>
   <% for adoptable_animal in  @adoptable_animals %>
-    
- 
-    <select name ="animal_id">
-        <option value="<%= adoptable_animal.id %>"><%= adoptable_animal.name %></option>
-        </select>
+  
+  
+  <select name ="animal_id">
+    <option value="<%= adoptable_animal.id %>"><%= adoptable_animal.name %></option>
+  </select>
 
-    <input  type='submit' value="Adopt">
+  <input  type='submit' value="Adopt">
 
-      
-      
-     
+  
+  
+  
   <% end %>
-  </form>
- 
-  <% else %>
-  <p> No animals to Adopt</p>
-  <% end %>
+</form>
+
+<% else %>
+<p> No animals to Adopt</p>
+<% end %>

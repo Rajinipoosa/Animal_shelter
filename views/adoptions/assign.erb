@@ -1,0 +1,27 @@
+<table>
+  <form method = "post" action="/assign" >
+    <tr>
+      <th><label for="type">Select a User</label></th><td></td><td>
+      <select  name="owner_id">
+        <% for owner in @owners %>
+        <option value="<%= owner.id %>"><%= owner.first_name%></option>
+        <% end %>
+        
+      </select>
+      
+    </td><br/></tr>
+    <tr>
+      <th><label for="type">Select a Type</label></th><td></td><td>
+      <select  name="animal_id">
+        <% for animal in @animals %>
+        <option value="<%= animal.id %>"><%=animal.name%></option>
+        
+        <% end %>
+      </select></td></tr>
+      <tr>
+       <td></td>
+       <td>
+         <input type="submit" value="AssignAnimal" /></td></tr>
+         
+       </form>
+     </table>

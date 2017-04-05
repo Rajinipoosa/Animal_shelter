@@ -1,12 +1,13 @@
 require_relative('../db/sql_runner.rb')
+
 class Type
   attr_reader :id
   attr_accessor :name
   def initialize(options)
     @id =  options['id'].to_i
     @name = options['name']
-
   end
+
   def save()
     sql = "INSERT INTO type(name) VALUES('#{@name}') RETURNING *"
     type = SqlRunner.run(sql)
@@ -16,7 +17,6 @@ class Type
   def update()
     sql = "UPDATE  type SET(name)=('#{@name}')"
     SqlRunner.run(sql)
-    
   end
 
   def self.all()
@@ -24,7 +24,6 @@ class Type
     types = SqlRunner.run(sql)
     @all_types = types.map{ |type| Type.new(type) }
     return @all_types
-
   end
 
   def self.delete_all()
@@ -32,6 +31,4 @@ class Type
     SqlRunner.run(sql)
   end
   
-  
-  
- end
+end

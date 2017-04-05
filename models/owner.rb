@@ -27,37 +27,35 @@ class Owner
     return adoptions
   end
 
- def animals()
-   sql = "SELECT animals.* FROM animals INNER JOIN adoptions ON animals.id = adoptions.animal_id WHERE adoptions.owner_id =  #{@id}"
+  def animals()
+    sql = "SELECT animals.* FROM animals INNER JOIN adoptions ON animals.id = adoptions.animal_id WHERE adoptions.owner_id =  #{@id}"
 
-   animals = SqlRunner.run(sql)
-   @animals = animals.map{ |animal| Animal.new(animal) }
-   return @animals
- end
+    animals = SqlRunner.run(sql)
+    @animals = animals.map{ |animal| Animal.new(animal) }
+    return @animals
+  end
 
- def delete()
-   sql = "DELETE FROM owners where id = #{@id}"
+  def delete()
+    sql = "DELETE FROM owners where id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
+  def self.all
+    sql = "SELECT * FROM owners"
+    owners =  SqlRunner.run(sql)
+    @all_owners = owners.map{ |owner| Owner.new(owner) }
+    return @all_owners
+  end
+  def self.delete_all
+   sql = "DELETE  FROM owners"
    SqlRunner.run(sql)
  end
 
- def self.all
-   sql = "SELECT * FROM owners"
-   owners =  SqlRunner.run(sql)
-   @all_owners = owners.map{ |owner| Owner.new(owner) }
-   return @all_owners
+ def self.find(id)
+   sql = "SELECT * FROM owners WHERE id = #{id}"
+   owners = SqlRunner.run(sql)
+   return Owner.new(owners.first)
  end
-
- def self.delete_all
-  sql = "DELETE  FROM owners"
-  SqlRunner.run(sql)
-end
-
-def self.find(id)
-  sql = "SELECT * FROM owners WHERE id = #{id}"
-  owners = SqlRunner.run(sql)
-  return Owner.new(owners.first)
-
-end
 end
 
 

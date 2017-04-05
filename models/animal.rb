@@ -7,7 +7,7 @@ class Animal
     @id =  options['id'].to_i
     @name = options['name']
     @breed = options['breed']
-    @type = options['type']
+    @type = options['type'].to_i
     @admission_date = options['admission_date']
     @status = options['status']
     @description = options['description']
@@ -30,7 +30,7 @@ class Animal
    sql = "DELETE FROM animals where id = #{@id}"
    SqlRunner.run(sql)
  end
- 
+
 
  def self.all
   sql = "SELECT * FROM animals"
@@ -59,7 +59,13 @@ def self.delete_all
 
 end
 
-
-
+def self.find_type(type_id)
+    sql = "SELECT * FROM animals WHERE type = #{type_id}"
+    animals = SqlRunner.run(sql)
+    
+  result= animals.map{ |animal| Animal.new(animal) }
+  
+    return result
+end
 
 end

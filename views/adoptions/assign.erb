@@ -1,3 +1,4 @@
+<h1>Assign Animal</h1>
 <table>
   <form method = "post" action="/assign" >
     <tr>
@@ -6,22 +7,28 @@
         <% for owner in @owners %>
         <option value="<%= owner.id %>"><%= owner.first_name%></option>
         <% end %>
-        
+
       </select>
-      
+
     </td><br/></tr>
     <tr>
-      <th><label for="type">Select a Type</label></th><td></td><td>
+    <th><label for="type">Select a Animal type</label></th><td></td>
+    <td>
+    <% if @adoptable_animals != [] %>
+      <% for adoptable_animal in @adoptable_animals %>
       <select  name="animal_id">
-        <% for animal in @animals %>
-        <option value="<%= animal.id %>"><%=animal.name%></option>
-        
+          
+      <option value="<%= adoptable_animal.id %>"><%=adoptable_animal.name%></option>
+      </select>
+         <input type="submit" value="AssignAnimal" class ="button" /></td></tr>
+
         <% end %>
-      </select></td></tr>
-      <tr>
-       <td></td>
-       <td>
-         <input type="submit" value="AssignAnimal" /></td></tr>
-         
-       </form>
+        </form>
+     <tr><td >    
+     <% else %>
+     No animals to Adopt</td></tr>
+      
+     
+       <% end %>
+      
      </table>

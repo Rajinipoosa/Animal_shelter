@@ -1,10 +1,10 @@
 <h1> In Training Animals</h1>
 <% for animal in @animals %>
 <% if animal.training == "t" %>
-<p> Name:<%= animal.name%></p>
-<p> Admission date:<%= animal.admission_date %></p>
+<p> <h3>Name:</h3><%= animal.name%></p>
+<p> <h3>Admission date:</h3><%= animal.admission_date %></p>
 <p> <img src="<%= animal.image %>" style="height: 150px; width: 200px" /></p>
-<p> Description:<%= animal.description %></p>
+<p class="description"> <h3>Description:</h3><%= animal.description %></p>
 
 
 <%end %>

@@ -22,7 +22,8 @@ get '/assign' do
   @owners = Owner.all()
   @animals = Animal.all()
   @types = Type.all()
-
+ 
+  @adoptable_animals = Animal.adoptables()
   erb ( :"adoptions/assign" )
 end
 post '/assign' do

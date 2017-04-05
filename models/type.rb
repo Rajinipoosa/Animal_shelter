@@ -32,7 +32,6 @@ class Type
     SqlRunner.run(sql)
   end
   
-
-
   
-end
+  
+ end

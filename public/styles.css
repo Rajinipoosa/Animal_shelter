@@ -52,11 +52,15 @@ float: left}
 
 .image{
 
-  height: 150px; 
-  width: 200px;
+  height: 300px; 
+  width: 350px;
  display: block;
  margin: auto;
+ border-radius: 50%;
   
+}
+.image hover{
+
 }
 .image1{
   height: 150px; 
@@ -68,9 +72,36 @@ th.header{
 }
 p.text{
   text-align: left;
+
 }
 
-div.form{
+.form{
   display:inline;
  
+}
+.button {
+    background-color: #008CBA;
+       border-radius: 12px;
+       color: white;
+       padding: 9px 19px;
+       border: 2px solid #4CAF50;
+}
+
+  select {
+          width:140px;
+      
+}
+.owners{
+  width: 50%;
+  height :70%;
+  display: inline-block;
+
+      /*background: lightblue;
+      display: inline-block; */ 
+}
+.description{
+ text-align: justify;
+     -moz-text-align-last: right; /* Code for Firefox */
+     text-align-last: right;
+
 }

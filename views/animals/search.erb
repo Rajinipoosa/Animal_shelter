@@ -1,0 +1,18 @@
+<h1> Search Animals</h1>
+
+<table>
+<form action="/animals/search" method = "post">
+<tr>
+         <td><th><label for="type">Select a Type</label></th></td>
+         <td><select id="type" name="type_id">
+          <% for type in @types %>
+          <option value="<%=type.id%>"><%=type.name%></option>
+
+          <% end %>
+        </select></td>
+        <td><input type="submit" value ="search" class="button" /></td>
+      </tr>
+</form>
+</td>
+</tr>
+</table>

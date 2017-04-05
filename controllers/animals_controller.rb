@@ -5,9 +5,16 @@ require_relative( '../models/animal.rb' )
 require_relative( '../models/type.rb' )
 
 
+
+
 get '/animals' do
   @animals = Animal.all()
   erb ( :"animals/index" )
+end
+
+get '/animals/search' do
+  @types = Type.all()
+  erb(:"animals/search")
 end
 
 post '/animals/:id/delete' do
@@ -36,6 +43,13 @@ get '/animals/:id/edit' do
   erb(:"/animals/edit")
 end
 
+
+post '/animals/search' do
+  @animals= Animal.find_type(params[:type_id])  
+  erb(:"animals/index_by_type")
+end
+
+
 post '/animals/:id' do
   @animal = Animal.new(params)
   @animal.update
@@ -44,6 +58,5 @@ end
 
 get '/animals/:id' do
   @animal = Animal.find(params[:id])
-  erb(:"animals/show")
+  erb(:"/animals/show")
 end
-

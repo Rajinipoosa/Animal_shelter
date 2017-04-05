@@ -5,20 +5,20 @@
      <label for="Animal_name">Animal name:</label></th><td></td><td><input id="name" type="text" name="name" value ="<%=@animal.name %>" /></td></tr>
      <tr>
        <th><label for="type">Select a Type</label></th><td></td><td>
-       
+
        <select id="type" name="type">
         <% for type in @types %>
         <option value="<%= type.id %>"><%=type.name%></option>
         <% end %>
-        
+
       </select></td>
     </tr>
     <tr>
       <th> <label for="breed">Breed:</label></th><td></td> <td>
       <input id="breed" type="text" name="breed" value ="<%=@animal.breed %>"  /></td>
     </tr>
-    
-    
+
+
     <br/>
   </tr>
   <tr>
@@ -41,7 +41,7 @@
      <th><label for="Image">Image:</label>
      </th><td></td>
      <td><input type ="text"  name = "image" value = "<%= @animal.image%>" /></td>
-     
+
      <br/>
    </tr>
    <tr>
@@ -64,7 +64,7 @@
   <tr>
    <td></td>
    <td>
-     <input type="submit" value="Edit Animal" /></td></tr>
+   <input type="submit" value="Edit Animal" class="button" /></td></tr>
    </form>
 
  </table>

@@ -9,7 +9,7 @@
          <select id="type" name="type">
           <% for type in @types %>
           <option value="<%=type.id%>"><%=type.name%></option>
-          
+
           <% end %>
         </select></td>
       </tr>
@@ -17,7 +17,7 @@
         <th> <label for="breed">Breed:</label></th><td></td> <td>
         <input id="breed" type="text" name="breed" /></td>
       </tr>
-      
+
     </tr>
     <tr>
      <th><label for="Admission_date">Admission Date:</label>
@@ -38,7 +38,7 @@
        <th><label for="Image">Image:</label>
        </th><td></td>
        <td><input type ="url"  name = "image" value = "url" /></td>
-       
+
      </tr>
      <tr>
       <th><label for="status">Status:</label>
@@ -46,7 +46,7 @@
       <td><input type ="radio"  name = "status" value = "true" checked="checked" />Adoptable</td>
       <td><input type ="radio"  name = "status" value = "false" />Not Adoptable</td>
 
-      
+
     </tr>
     <tr>
      <th><label for="Training">Training:</label>
@@ -57,7 +57,7 @@
    <tr>
      <td></td>
      <td>
-       <input type="submit" value="Add Animal" /></td></tr>
+     <input type="submit" value="Add Animal" class="button" /></td></tr>
      </form>
 
    </table>

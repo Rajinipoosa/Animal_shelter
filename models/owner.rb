@@ -22,10 +22,10 @@ class Owner
   end
 
   def adopt(id)
-   sql = "INSERT INTO adoptions(animal_id,owner_id) VALUES(#{id},#{@id}) RETURNING *"
-   adoptions = SqlRunner.run(sql).first()
-
- end
+    sql = "INSERT INTO adoptions(animal_id,owner_id) VALUES(#{id},#{@id}) RETURNING *"
+    adoptions = SqlRunner.run(sql).first()
+    return adoptions
+  end
 
  def animals()
    sql = "SELECT animals.* FROM animals INNER JOIN adoptions ON animals.id = adoptions.animal_id WHERE adoptions.owner_id =  #{@id}"

@@ -1,107 +1,87 @@
 body.animal {
-background-image: url("/images/back.jpg");
-background-repeat: no-repeat;
-font-family: Verdana, serif;
+  background-image: url("/images/back.jpg");
+  background-repeat: no-repeat;
+  font-family: Verdana, serif;
 }
-
-
 h1{
   color: Black;
   text-align: center;
-  
-}
+  }
 ul.unorder li{
-list-style-type: none;
-display: inline;
-
+  list-style-type: none;
+  display: inline;
 }
 div.animals {
-  
   font-size: 15px;
- }
- ul {
-     list-style-type: none;
-     margin: 0;
-     padding: 0;
-     overflow: hidden;
-     background-color: #333;
-     
- }
+}
+ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ background-color: #333;
 
- li {
-     float: left;
-     border-right:1px solid #bbb;
- }
+}
 
- li a {
-     display: block;
-     color: white;
-     text-align: center;
-     padding: 16px 25px;
-     text-decoration: none;
- }
+li {
+ float: left;
+ border-right:1px solid #bbb;
+}
 
- /* Change the link color to #111 (black) on hover */
- li a:hover {
-     background-color: #111;
- }
-div.animals{
-display: block;
-
-float: left}
-
-.image{
-
-  height: 300px; 
-  width: 350px;
+li a {
  display: block;
- margin: auto;
- border-radius: 50%;
-  
+ color: white;
+ text-align: center;
+ padding: 16px 25px;
+ text-decoration: none;
 }
-.image hover{
+li a:hover {
+ background-color: #111;
+}
+div.animals{
+  display: block;
+  float: left}
+.image{
+     height: 300px; 
+    width: 350px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+  }
+   .image1{
+    height: 150px; 
+    width: 200px;
+  }
+  th.header{
+    text-align: left;
+    }
+  p.text{
+    text-align: left;
+  }
 
-}
-.image1{
-  height: 150px; 
-  width: 200px;
-}
-th.header{
-  text-align: left;
-
-}
-p.text{
-  text-align: left;
-
-}
-
-.form{
-  display:inline;
- 
-}
-.button {
+  .form{
+    display:inline;
+    }
+  .button {
     background-color: #008CBA;
-       border-radius: 12px;
-       color: white;
-       padding: 9px 19px;
-       border: 2px solid #4CAF50;
-}
-
+    border-radius: 12px;
+    color: white;
+    padding: 9px 19px;
+    border: 2px solid #4CAF50;
+  }
   select {
-          width:140px;
-      
-}
-.owners{
-  width: 50%;
-  height :70%;
-  display: inline-block;
+    width:140px;
 
-      /*background: lightblue;
-      display: inline-block; */ 
-}
-.description{
- text-align: justify;
-     -moz-text-align-last: right; /* Code for Firefox */
-     text-align-last: right;
+  }
+  .owners{
+    width: 50%;
+    height :70%;
+    display: inline-block;
 
-}
+  }
+  .description{
+   text-align: justify;
+   -moz-text-align-last: right; 
+   text-align-last: right;
+
+ }

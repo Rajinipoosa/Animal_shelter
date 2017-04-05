@@ -4,8 +4,9 @@ body.animal {
   font-family: Verdana, serif;
 }
 h1{
-  color: Black;
+  color: black;
   text-align: center;
+  
   }
 ul.unorder li{
   list-style-type: none;

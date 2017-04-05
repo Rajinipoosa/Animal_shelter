@@ -14,18 +14,18 @@
       <th><label for="type">Select a Animal type</label></th><td></td>
       <td>
         <% if @adoptable_animals != [] %>
-        <% for adoptable_animal in @adoptable_animals %>
+       
         <select  name="animal_id">
-
-          <option value="<%= adoptable_animal.id %>"><%=adoptable_animal.name%></option>
+        <% for adoptable_animal in @adoptable_animals %>
+          <option value="<%= adoptable_animal.id %>"><%=adoptable_animal.name%></option> <% end %>
         </select></td></tr><tr></tr>
         <tr><td style="text-align:right;"><input type="submit" value="AssignAnimal" class ="button" /></td></tr>
-
-        <% end %>
-      </form>
-      <tr><td >    
+        </form>
+       
+      
+      
        <% else %>
-       No animals to Adopt</td></tr>
+       No animals to Adopt
        <% end %>
 
      </table>

@@ -28,27 +28,24 @@
         <% end %> 
         <tr style="display:inline; ">
          <td>
+          <form method ="get" action ="/animals/<%=animal.id%>/edit">
+           <input type="submit"  value ="Edit" class="button" >
+         </form>
+       </td>
+       <td>
+        <form method ="get" action ="/animals/<%=animal.id%>">
+          <input type="submit"  value ="show" class="button" >
+        </form>
+      </td>
+      <td>
+       <form method ="post" action ="/animals/<%=animal.id%>/delete">
+         <input type="submit"   value ="Delete" class="button" >
+       </td>
+     </form>
 
-
-
-           <form method ="get" action ="/animals/<%=animal.id%>/edit">
-             <input type="submit"  value ="Edit" class="button" >
-           </form>
-         </td>
-         <td>
-          <form method ="get" action ="/animals/<%=animal.id%>">
-            <input type="submit"  value ="show" class="button" >
-          </form>
-        </td>
-        <td>
-         <form method ="post" action ="/animals/<%=animal.id%>/delete">
-           <input type="submit"   value ="Delete" class="button" >
-         </td>
-       </form>
-
-     </div>
-   </td>
- </tr>
+   </div>
+ </td>
+</tr>
 </tr>
 </table>
 </div>

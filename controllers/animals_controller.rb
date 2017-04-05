@@ -4,9 +4,6 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/animal.rb' )
 require_relative( '../models/type.rb' )
 
-
-
-
 get '/animals' do
   @animals = Animal.all()
   erb ( :"animals/index" )
@@ -24,13 +21,12 @@ post '/animals/:id/delete' do
 end
 
 get '/animals/new' do 
- @types = Type.all()
+  @types = Type.all()
 
  erb(:"animals/new")
 end
 
 post '/animals' do 
-  # binding.pry
   @animals = Animal.new(params)
   @animals.save()
   redirect '/animals'
@@ -43,12 +39,10 @@ get '/animals/:id/edit' do
   erb(:"/animals/edit")
 end
 
-
 post '/animals/search' do
   @animals= Animal.find_type(params[:type_id])  
   erb(:"animals/index_by_type")
 end
-
 
 post '/animals/:id' do
   @animal = Animal.new(params)

@@ -2,21 +2,21 @@
 
 <% for owner in @owners %>
 <div class="owners">
-<p>Name:   <%= owner.first_name %>  </p>
+  <p>Name:   <%= owner.first_name %>  </p>
 
-<% for animal in owner.animals %>
-<p>Animal name:  <%=animal.name %>   </p>
-<p>Animal Admission date:  <%= animal.admission_date  %></p>
-<% end %>
+  <% for animal in owner.animals %>
+  <p>Animal name:  <%=animal.name %>   </p>
+  <p>Animal Admission date:  <%= animal.admission_date  %></p>
+  <% end %>
 
- <form method = "get" type='submit' action = "/owners/<%= owner.id%>/adopt" class="form">
- <input type ="submit" value ="adoption" class="button"></form>
- 
+  <form method = "get" type='submit' action = "/owners/<%= owner.id%>/adopt" class="form">
+   <input type ="submit" value ="adoption" class="button"></form>
+   
    <form method = "post" type='submit' action = "/owners/<%= owner.id%>/delete" class="form">
      <input type ="submit" value ="Delete" class="button">
- </form>
+   </form>
  </div>
-   <% end %>
+ <% end %>
 
 
 

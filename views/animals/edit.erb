@@ -17,9 +17,7 @@
       <th> <label for="breed">Breed:</label></th><td></td> <td>
       <input id="breed" type="text" name="breed" value ="<%=@animal.breed %>"  /></td>
     </tr>
-
-
-    <br/>
+   <br/>
   </tr>
   <tr>
    <th><label for="Admission_date">Admission Date:</label>
@@ -49,22 +47,19 @@
     </th><td></td>
     <td><input type ="radio"  name = "status" value = "t" <%= "checked" if @animal.status == 't' %> />Adoptable</td>
     <td><input type ="radio"  name = "status" value = "f" <%= "checked" if @animal.status == 'f' %> />Not Adoptable</td>
-    <!-- <input checked />   -->
-    
-
   </tr>
   <tr>
     <th><label for="training">Need training:</label>
     </th><td></td>
     <td><input type ="radio"  name = "training" value = "t" <%= "checked" if @animal.training == 't' %> />In training</td>
     <td><input type ="radio"  name = "training" value = "f" <%= "checked" if @animal.training == 'f' %> />Not Training</td>
-    <!-- <input checked />   -->
+
 
   </tr>
   <tr>
    <td></td>
    <td>
-   <input type="submit" value="Edit Animal" class="button" /></td></tr>
+     <input type="submit" value="Edit Animal" class="button" /></td></tr>
    </form>
 
  </table>

@@ -7,28 +7,25 @@
         <% for owner in @owners %>
         <option value="<%= owner.id %>"><%= owner.first_name%></option>
         <% end %>
-
       </select>
 
     </td><br/></tr>
     <tr>
-    <th><label for="type">Select a Animal type</label></th><td></td>
-    <td>
-    <% if @adoptable_animals != [] %>
-      <% for adoptable_animal in @adoptable_animals %>
-      <select  name="animal_id">
-          
-      <option value="<%= adoptable_animal.id %>"><%=adoptable_animal.name%></option>
-      </select>
-         <input type="submit" value="AssignAnimal" class ="button" /></td></tr>
+      <th><label for="type">Select a Animal type</label></th><td></td>
+      <td>
+        <% if @adoptable_animals != [] %>
+        <% for adoptable_animal in @adoptable_animals %>
+        <select  name="animal_id">
+
+          <option value="<%= adoptable_animal.id %>"><%=adoptable_animal.name%></option>
+        </select>
+        <input type="submit" value="AssignAnimal" class ="button" /></td></tr>
 
         <% end %>
-        </form>
-     <tr><td >    
-     <% else %>
-     No animals to Adopt</td></tr>
-      
-     
+      </form>
+      <tr><td >    
+       <% else %>
+       No animals to Adopt</td></tr>
        <% end %>
-      
+
      </table>

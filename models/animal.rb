@@ -29,7 +29,7 @@ class Animal
   def delete()
    sql = "DELETE FROM animals where id = #{@id}"
    SqlRunner.run(sql)
- end
+  end
 
 
  def self.all
@@ -37,7 +37,8 @@ class Animal
   animals = SqlRunner.run(sql)
   @all_animals = animals.map{ |animal| Animal.new(animal) }
   return @all_animals
-end
+ end
+ 
 def self.adoptables()
   sql = "SELECT * FROM animals WHERE status = 't'"
   animals = SqlRunner.run(sql)
@@ -60,12 +61,12 @@ def self.delete_all
 end
 
 def self.find_type(type_id)
-    sql = "SELECT * FROM animals WHERE type = #{type_id}"
-    animals = SqlRunner.run(sql)
-    
+  sql = "SELECT * FROM animals WHERE type = #{type_id}"
+  animals = SqlRunner.run(sql)
+
   result= animals.map{ |animal| Animal.new(animal) }
   
-    return result
+  return result
 end
 
 end

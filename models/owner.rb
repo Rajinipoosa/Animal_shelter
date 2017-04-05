@@ -49,7 +49,7 @@ class Owner
   def self.delete_all
    sql = "DELETE  FROM owners"
    SqlRunner.run(sql)
- end
+  end
 
  def self.find(id)
    sql = "SELECT * FROM owners WHERE id = #{id}"
